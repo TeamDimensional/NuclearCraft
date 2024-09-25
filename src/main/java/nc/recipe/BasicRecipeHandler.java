@@ -344,7 +344,11 @@ public abstract class BasicRecipeHandler extends AbstractRecipeHandler<BasicReci
 	}
 	
 	protected void setValidFluids() {
-		validFluids = RecipeHelper.validFluids(this);
+		if (validFluids == null) {
+			validFluids = new ArrayList();
+		}
+		validFluids.clear();
+		validFluids.addAll(RecipeHelper.validFluids(this));
 	}
 	
 	public void postInit() {

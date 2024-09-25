@@ -35,6 +35,12 @@ public abstract class GSBasicRecipeRegistry extends VirtualizedRegistry<BasicRec
 		restoreFromBackup().forEach(recipeHandler::addRecipe);
 		recipeHandler.onReload();
 	}
+
+	@GroovyBlacklist
+	@Override
+	public void afterScriptLoad() {
+		getRecipeHandler().postInit();
+	}
 	
 	@GroovyBlacklist
 	protected void addRecipeInternal(Object... objects) {
