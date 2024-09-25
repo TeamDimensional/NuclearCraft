@@ -345,7 +345,7 @@ public abstract class BasicRecipeHandler extends AbstractRecipeHandler<BasicReci
 	
 	protected void setValidFluids() {
 		if (validFluids == null) {
-			validFluids = new ArrayList();
+			validFluids = new ArrayList<>();
 		}
 		validFluids.clear();
 		validFluids.addAll(RecipeHelper.validFluids(this));
